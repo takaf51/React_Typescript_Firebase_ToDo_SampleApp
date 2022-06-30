@@ -1,0 +1,187 @@
+section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #161623;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: linear-gradient(rgba(254, 3, 3, 0.9), rgba(10, 23, 169, 0.9));
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  border-radius: 50%;
+  transform: translate(-400px, -300px);
+  animation-name: circle1;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes circle1 {
+  0% {
+    transform: translate(-400px, -300px) rotate(0deg);
+    background-position: 0% 100%;
+  }
+  100% {
+    transform: translate(-400px, -300px) rotate(360deg);
+    background-position: 100% 0%;
+  }
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#04f77d, #af8e0b);
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  border-radius: 50%;
+  transform: translate(350px, 220px);
+  animation-name: circle2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+@keyframes circle2 {
+  0% {
+    transform: translate(350px, 220px) rotate(0deg);
+    background-size: 200% 200%;
+  }
+  100% {
+    transform: translate(350px, 220px) rotate(360deg);
+    background-size: 100% 100%;
+  }
+}
+
+.box {
+  position: relative;
+  min-width: 450px;
+  min-height: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0.25px 0.45px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.box h3 {
+  text-align: center;
+  color: #fff;
+  margin: 1em 0;
+  font-size: 2.3em;
+  font-weight: 300;
+  text-shadow: 3px 3px 5px #555;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
+
+.add {
+  cursor: pointer;
+  font-size: 2em;
+  color: white;
+  background: transparent;
+  border: none;
+  margin-left: 0.4em;
+  transition: 0.5s;
+}
+
+.add:disabled {
+  color: rgba(124, 124, 124, 0.1);
+  cursor: auto;
+}
+
+ul {
+  margin: 2em 1.5em;
+}
+
+.item {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1em 1em;
+  margin: 1em 0;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.item:hover {
+  background: #fff;
+  box-shadow: -15px 30px 50px rgba(69, 68, 38, 0.5);
+  transform: translate(50px, -15px) scale(1.25);
+  z-index: 1000;
+}
+
+.edit input {
+  height: 2.5em;
+  width: 70%;
+  border-radius: 5px;
+  padding-left: .5em;
+}
+
+.disp {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.move {
+  transform: translateX(500px);
+}
+
+.item input {
+  position: absolute;
+}
+
+li {
+  font-size: 1.3em;
+  list-style: none;
+  color: #fff;
+  font-weight: 200;
+}
+
+.item:hover li {
+  color: rgb(87, 91, 157);
+  font-weight: 600;
+}
+
+.item .buttons {
+  position: absolute;
+  right: -200px;
+  transition: 0.5s;
+}
+
+.item:hover .buttons {
+  right: 30px;
+}
+
+.item .buttons button {
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.item .buttons .left {
+  color: rgba(3, 3, 254, 0.8);
+}
+
+.item .buttons .right {
+  color: rgba(254, 3, 3, 0.8);
+  margin-left: 1em;
+}
