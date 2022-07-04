@@ -130,7 +130,7 @@ ul {
   height: 2.5em;
   width: 70%;
   border-radius: 5px;
-  padding-left: .5em;
+  padding-left: 0.5em;
 }
 
 .disp {
@@ -184,4 +184,18 @@ li {
 .item .buttons .right {
   color: rgba(254, 3, 3, 0.8);
   margin-left: 1em;
+}
+
+.box .login {
+  margin: auto;
+  vertical-align: middle;
+}
+
+.box .login form {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #04f77d;
 }
