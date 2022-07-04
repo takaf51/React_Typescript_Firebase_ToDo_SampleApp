@@ -186,16 +186,62 @@ li {
   margin-left: 1em;
 }
 
-.box .login {
-  margin: auto;
-  vertical-align: middle;
+.login .box {
+  position: relative;
+  min-height: 470px;
+  height: 470px;
 }
 
-.box .login form {
-  height: 200px;
+.login form {
+  height: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  background: #f7cf04;
+  flex-direction: column;
+  gap: 2em;
+  padding: 0 1.5em;
+  font-size: 1em;
+  color: white;
+  font-weight: 200;
+}
+
+.login form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.login form input {
+  font-size: 1.5em;
+  width: 100%;
+  border-radius: 30px;
+  background: transparent;
+  border: 1px solid #fff;
+  box-shadow: none;
+  color: #fff;
+  outline: none;
+  padding:5px 20px;
+  letter-spacing: 1px;
+}
+
+.login form button {
+  font-size: 1.5em;
+  width: 100%;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 6px 16px;
+  font-size: 1.4em;
+  font-weight: 200;
+  border-radius: 30px;
+  box-shadow: 5px 5px 20px #555;
+  margin-top: 20px;
+}
+
+.login form button:hover {
+  background: #fff;
+  color: #111;
+  cursor: pointer;
 }

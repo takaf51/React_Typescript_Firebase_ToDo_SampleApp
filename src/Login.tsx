@@ -1,23 +1,25 @@
 import "./App.css";
+import React from 'react'
 
 function Login() {
+  function loginHandler(e:React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
   return (
-    <section>
+    <section className="login">
       <div className="box">
         <h3>Login</h3>
-        <div className="login">
-          <form>
-            <label>
-              email
-              <input type="email"></input>
-            </label>
-            <label>
-              password
-              <input type="password"></input>
-            </label>
-            <button>Login</button>
-          </form>
-        </div>
+        <form onSubmit={loginHandler}>
+          <div className="input">
+            <label> Email</label>
+            <input type="email"></input>
+          </div>
+          <div className="input">
+            <label> Password</label>
+            <input type="password"></input>
+          </div>
+          <button>Login</button>
+        </form>
       </div>
     </section>
   );

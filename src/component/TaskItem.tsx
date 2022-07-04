@@ -3,7 +3,6 @@ import { db } from "../firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan, faPen } from "@fortawesome/free-solid-svg-icons";
-import { ReactNativeAsyncStorage } from "firebase/auth";
 import EditTask from "./EditTask";
 
 interface Task {
