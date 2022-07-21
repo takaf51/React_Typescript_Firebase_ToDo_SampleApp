@@ -1,16 +1,20 @@
-import { useState } from 'react';
-import { auth } from '../firebase';
+import { useState } from "react";
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword, UserCredential } from "firebase/auth";
-import { FirebaseError } from 'firebase/app';
+import { FirebaseError } from "firebase/app";
 
 export const useLogin = (): [
   (email: string, password: string) => Promise<UserCredential | undefined>,
-  FirebaseError | null, boolean
+  FirebaseError | null,
+  boolean
 ] => {
   const [error, setError] = useState<FirebaseError | null>(null);
   const [isPending, setIsPennding] = useState(false);
 
-  async function login(email: string, password: string): Promise<UserCredential | undefined> {
+  async function login(
+    email: string,
+    password: string
+  ): Promise<UserCredential | undefined> {
     setError(null);
     setIsPennding(true);
     try {
