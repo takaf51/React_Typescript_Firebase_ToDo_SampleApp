@@ -43,8 +43,10 @@ function App() {
   return (
     <section>
       <div className="box">
-        <h3>To Do List</h3>
-        <button onClick={logoutHandler}>logout</button>
+        <div className="logout">
+          <h3>To Do List</h3>
+          <button onClick={logoutHandler}>logout</button>
+        </div>
         <AddTask />
         <ul>
           {tasks.map((task) => (

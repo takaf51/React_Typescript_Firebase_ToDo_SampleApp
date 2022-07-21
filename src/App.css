@@ -76,6 +76,25 @@ section::after {
   backdrop-filter: blur(10px);
 }
 
+.box .logout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.box .logout button {
+  color: #fff;
+    background: transparent;
+    height: 50px;
+    padding: 10px 13px;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
 .box h3 {
   text-align: center;
   color: #fff;
@@ -246,3 +265,4 @@ li {
   cursor: pointer;
   font-weight: 500;
 }
+
