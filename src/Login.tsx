@@ -1,18 +1,21 @@
 import "./App.css";
-import React, { useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { useLogin } from "./hooks/useLogin";
-import { auth } from './firebase';
-import { FirebaseError } from "firebase/app";
+import { AuthContext } from "./hooks/auth";
+
 
 function Login() {
   const [login, error, isPending] = useLogin();
+  const { isLogin, setIsLogin } = useContext(AuthContext);
+
   async function loginHandler(e:React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const password = (document.getElementById("password") as HTMLInputElement).value;
     if (!email || !password) return;
     const info = await login(email, password);
-    console.log(info?.user.displayName);
+    if (info) setIsLogin(true);
+    console.log(isLogin);
   }
 
   return (

@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword, UserCredential } from "firebase/auth";
 import { FirebaseError } from 'firebase/app';
+import { Autorenew } from '@material-ui/icons';
+import { AuthContext } from './auth';
+import { useNavigate } from 'react-router-dom';
 
 export const useLogin = (): [
   (email: string, password: string) => Promise<UserCredential | undefined>,
