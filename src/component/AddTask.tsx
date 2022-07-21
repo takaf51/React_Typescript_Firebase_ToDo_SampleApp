@@ -28,8 +28,10 @@ const AddTask = () => {
 
   async function newTask(e: React.MouseEvent<HTMLButtonElement>) {
     if (!input || input.trim().length === 0) return;
+    if (!auth.currentUser) return
     await addDoc(collection(db, "tasks"), {
       title: input,
+      uid: auth.currentUser.uid,
       createDateTime: new Date(),
     });
     setInput("");
